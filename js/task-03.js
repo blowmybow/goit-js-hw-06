@@ -13,7 +13,6 @@ const images = [
   },
 ];
 const listEl = document.querySelector(".gallery");
-console.log(listEl);
 
 listEl.style.display = 'flex';
 listEl.style.flexDirection = 'column';
@@ -23,6 +22,5 @@ listEl.style.gap = '30px';
 const imagesItemEl = images
   .map(({ url, alt }) => `<li> <img src = ${url} alt = ${alt} width ='480'/></li>`)
   .join('');
-console.log(imagesItemEl);
 
 listEl.insertAdjacentHTML('afterbegin', imagesItemEl);
