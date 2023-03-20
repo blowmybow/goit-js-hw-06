@@ -5,19 +5,19 @@ formEl.addEventListener("submit", onFormSubmit);
 function onFormSubmit(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-
-    formData.forEach((name, value) => {
-        console.log('onFormSubmit -> name', name);
-        console.log('onFormSubmit -> value', value);
-    })
-
     const {
     elements: { email, password }
-} = event.currentTarget;
-
+    } = event.currentTarget;
+    
     if (email.value === "" || password.value === "") {
     return alert("Всі поля повинні бути заповнені!");
-}
+    };
+
+    const formData = {
+        email: email.value,
+        password: password.value,
+    };
+    console.log(formData);
+
     event.currentTarget.reset();
 }
